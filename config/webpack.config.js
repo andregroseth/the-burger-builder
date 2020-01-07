@@ -85,6 +85,9 @@ module.exports = function(webpackEnv) {
       isEnvProduction && {
         loader: MiniCssExtractPlugin.loader,
         options: shouldUseRelativeAssetPaths ? { publicPath: '../../' } : {},
+          importLoaders: 1,
+          modules: true,
+          localIdentName: '[name]__[local]__[hash:base64:5]'
       },
       {
         loader: require.resolve('css-loader'),
